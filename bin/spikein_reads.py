@@ -29,7 +29,6 @@ read1 = []
 read2 = []
 read_count = 0
 for line in fastq1_p:
-    read_count += 1
     read1.append(line)
     read1.append(fastq1_p.readline())
     read1.append(fastq1_p.readline())
@@ -49,10 +48,3 @@ for line in fastq1_p:
         read2.append(spike2_p.readline())
 spikein.write_fastq_file(fastq=read1, output=args.output1)
 spikein.write_fastq_file(fastq=read2, output=args.output2)
-# out1_p = open(args.output1, 'w')
-# for line in read1:
-#     out1_p.write(line)
-
-# out2_p = open(args.output2, 'w')
-# for line in read2:
-#     out2_p.write(line)
